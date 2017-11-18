@@ -9,11 +9,21 @@
 
 <script type="text/javascript" src="https://cdn.datatables.net/v/ju-1.12.1/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
 
+    <style>
+        a{
+            color:#e0003f;
+            }
+
+    </style>
+
 </head>
 <body>
 
-<img src = {% static 'logo.png' %}>
+<center><img src = {% static 'logo.png' %} /> <br />
+    <a href = "/keymanage/employees">Employee View</a> | <a href = "keymanage/keys/">Key View</a>
+</center>
 
+<br /><br />
 
 <table id = "data" class= = "display">
     <thead>
