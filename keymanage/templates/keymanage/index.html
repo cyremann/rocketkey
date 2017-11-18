@@ -1,0 +1,25 @@
+<html>
+<head>
+
+
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
+</head>
+<body>
+
+    {% if employeelist %}
+    <ul>
+    {% for employee in employeelist %}
+        <li><a href="/keymanage/{{ employee.first_name }}/">{{ employee.last_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Employees are available.</p>
+{% endif %}
+
+</body>
+</html>
