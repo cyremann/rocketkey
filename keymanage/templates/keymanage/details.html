@@ -26,9 +26,9 @@
     {% if keylist %}
         {% for key in keylist %}
     <tr>
-        <td>{{key.first_name}}</td>
-        <td>{{key.last_name}}</td>
-        <td><a href="{% url 'detail' employee.id %}">Detail</a></td>
+        <td>{{key.code}} - {{key.number}}</td>
+        <td>{{key.date_issued}}</td>
+        <td>{{key.date_returned}}</td>
     </tr>
         {% endfor %}
     {% else %}

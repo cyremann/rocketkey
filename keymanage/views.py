@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Employee, Key
+from .models import Employee, Key, Keycode
 
 def index(request):
     employeelist = Employee.objects.order_by('-first_name')[:5]
@@ -13,6 +13,7 @@ def detail(request, employee_id):
 
 def detail(request, employee_id):
     employee = Employee.objects.get(pk=employee_id)
-    keylist = Key.objects.get(assignee=employee_id)
-    context = {'employee': employee, 'keylist': keylist}
+    codes = Keycode.objects.all
+    keylist = Key.objects.filter(assignee=employee_id)
+    context = {'employee': employee, 'keylist': keylist, 'codes': codes}
     return render(request, 'keymanage/details.html', context)
