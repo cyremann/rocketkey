@@ -2,7 +2,7 @@
 <head>
 
 
-    <title></title>
+    <title>Employee Detail</title>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/ju-1.12.1/jq-3.2.1/dt-1.10.16/datatables.min.css"/>
 
@@ -11,20 +11,23 @@
 </head>
 <body>
 
+<b>First Name:</b> {{employee.first_name}}</br>
+<b>Last Name:</b> {{employee.last_name}}</br>
+
 <table id = "data" class= = "display">
     <thead>
     <tr>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Detail</td>
+        <td>Key</td>
+        <td>Date Issued</td>
+        <td>Date Returned</td>
     </tr>
     </thead>
     <tbody>
-    {% if employeelist %}
-        {% for employee in employeelist %}
+    {% if keylist %}
+        {% for key in keylist %}
     <tr>
-        <td>{{employee.first_name}}</td>
-        <td>{{employee.last_name}}</td>
+        <td>{{key.first_name}}</td>
+        <td>{{key.last_name}}</td>
         <td><a href="{% url 'detail' employee.id %}">Detail</a></td>
     </tr>
         {% endfor %}

@@ -19,5 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^keymanage/', include('keymanage.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'', include('keymanage.urls'))
+    url(r'', include('keymanage.urls')),
+    # ex: /polls/5/
 ]
